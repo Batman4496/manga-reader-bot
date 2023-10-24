@@ -15,7 +15,8 @@ class ReaderView(Clearable):
     view = PageReaderView(self.manga, self.module)
     embed, file = view.generate_embed()
     
-    await interaction.followup.send(view=view.generate_view(), embed=embed, file=file)
+    message: discord.InteractionMessage = await interaction.original_response()
+    await interaction.followup.edit_message(message_id=message.id, view=view.generate_view(), embed=embed, file=file)
 
   def generate_embed(self) -> (discord.Embed, discord.File):
     manga = self.manga

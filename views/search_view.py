@@ -38,14 +38,15 @@ class SearchView(Clearable):
       )
       embed.set_image(url=f"attachment://manga-cover.jpg")
       
-      await interaction.followup.send(view=self.generate_view(), embed=embed, file=file)
+      message: discord.InteractionMessage = await interaction.original_response()
+      await interaction.followup.edit_message(message_id=message.id, view=self.generate_view(), embed=embed, file=file)
 
     except Exception as e:
       print(e)
       embed = discord.Embed(title="An Error Occured!")
       embed.add_field(name="Please try again with something else...", value=f"Error fetching details of **{url}**")
       
-      await interaction.followup.send(embed=embed)
+      await interaction.response.edit_message(embed=embed)
 
   def generate_embed(self, label = None):
     embed = discord.Embed(title=label)

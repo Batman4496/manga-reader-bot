@@ -38,8 +38,8 @@ class PageReaderView(Clearable):
     self.current_page = 0
 
     embed, file = self.generate_embed()
-
-    await interaction.followup.send(view=self.generate_view(), embed=embed, file=file)
+    message: discord.InteractionMessage = await interaction.original_response()
+    await interaction.followup.edit_message(message_id=message.id, view=self.generate_view(), embed=embed, file=file)
   
   def generate_embed(self) -> (discord.Embed, discord.File):   
     chapter = self.chapter
@@ -79,7 +79,8 @@ class PageReaderView(Clearable):
     self.current_page = 0
 
     embed, file = self.generate_embed()
-    await interaction.followup.send(view=self.generate_view(), embed=embed, file=file)
+    message: discord.InteractionMessage = await interaction.original_response()
+    await interaction.followup.edit_message(message_id=message.id, view=self.generate_view(), embed=embed, file=file)
 
 
   async def page_callback(self, interaction: discord.Interaction, next: bool):
@@ -99,7 +100,8 @@ class PageReaderView(Clearable):
         self.current_page -= 1
       
     embed, file = self.generate_embed()
-    await interaction.followup.send(view=self.generate_view(), embed=embed, file=file)
+    message: discord.InteractionMessage = await interaction.original_response()
+    await interaction.followup.edit_message(message_id=message.id, view=self.generate_view(), embed=embed, file=file)
 
 
   def generate_view(self) -> UI.View:
