@@ -19,7 +19,7 @@ class Miner(commands.Cog):
     msg = await ctx.send("Wait...")
 
     file = open(f"./storage/mine-channels/{ctx.channel.id}.txt", 'w')
-    file.write("message_id,channel_id,author_id,username,message_content,created_at")
+    file.write("message_id,channel_id,author_id,username,message_content,created_at\n")
     file.close()
 
     file = open(f"./storage/mine-channels/{ctx.channel.id}.txt", 'a', encoding='utf-8')
@@ -27,10 +27,11 @@ class Miner(commands.Cog):
     channel_history = ctx.channel.history(limit=None)
 
     async for message in channel_history:
-      file.write(f"{message.id},{ctx.channel.id},{message.author.id},{message.author.name},{message.content},{message.created_at}\n")
+      file.write(f'"{message.id}","{ctx.channel.id}","{message.author.id}","{message.author.name}","{message.content}","{message.created_at}"\n')
+    file.close()
 
-    await msg.edit("Done.")
-    
+    attachment = discord.File(f"./storage/mine-channels/{ctx.channel.id}.txt")
+    await msg.edit("Done.", file=attachment)    
 
 
 def setup(bot):

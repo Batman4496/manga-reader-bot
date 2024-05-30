@@ -1,10 +1,10 @@
 import discord
 from discord.ext import bridge
 import os # default module
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from constants import COGS
 
-# load_dotenv() # load all the variables from the env file
+load_dotenv() # load all the variables from the env file
 
 intents = discord.Intents()
 intents.message_content = True
@@ -23,4 +23,4 @@ for cog in COGS:
   bot.load_extension(f'cogs.{cog}')
   print(cog, "loaded!")
 
-bot.run("OTM3MDAzMjQ2NjgwMTU4MjA4.GzESe3.y6JJBiUrhxkaA4tzCJPNg9JeqKjgZ6dr9Tj9nE") # run the bot with the token
+bot.run(os.environ.get("TOKEN")) # run the bot with the token
