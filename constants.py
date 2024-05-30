@@ -1,6 +1,8 @@
 import modules.mangabat as mangabat
 import modules.mangatown as mangatown
 
+BONEMAN = 459250601314746375
+
 sources = {
   'MangaBat': {
     'm': mangabat.MangaBat,
@@ -20,8 +22,8 @@ COGS = [
   'manga.search',
   'manga.hot',
   'manga.read',
-  'help',
-  'perms.lockdown'
+  'miner.miner',
+  'help'
 ]
 
 
