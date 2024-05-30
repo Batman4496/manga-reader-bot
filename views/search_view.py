@@ -14,7 +14,7 @@ class SearchView(Clearable):
   def get_options(self) -> list[discord.SelectOption]:
     return [
       discord.SelectOption(label=option['title'][:50], value=str(index))
-      for index, option in enumerate(self.mangas)
+      for index, option in enumerate(self.mangas[:20])
     ]
 
   async def select_callback(self, interaction: discord.Interaction):

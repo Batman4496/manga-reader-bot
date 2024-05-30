@@ -20,7 +20,8 @@ COGS = [
   'manga.search',
   'manga.hot',
   'manga.read',
-  'help'
+  'help',
+  'perms.lockdown'
 ]
 
 
