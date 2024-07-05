@@ -47,7 +47,7 @@ class PageReaderView(Clearable):
       # Loading all chapter pages
       self.pages = self.module.get_chapter(chapter.get('url'))
   
-    embed = discord.Embed(title="Reader...")
+    embed = discord.Embed(title=self.manga.get('title'))
     embed.add_field(name=f"Chapter", value=f"{chapter.get('title')}")
     image = get_image(self.pages[self.current_page].get('image'), self.module.get_url())
     name = f"page-{self.current_page}.png"

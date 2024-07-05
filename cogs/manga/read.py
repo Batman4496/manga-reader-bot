@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from constants import sources, CHOICES
+from constants import CHOICES
 from views.reader_view import ReaderView
 from classes.manga_manager import MangaManger
 
@@ -16,7 +16,7 @@ class Read(commands.Cog):
       ctx: discord.ApplicationContext,
       url: discord.Option(
         str,
-        description="Url of manga"
+        description="Url of manga."
       ), 
       source: discord.Option(
         str, 

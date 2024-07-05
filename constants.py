@@ -1,20 +1,22 @@
-import modules.mangabat as mangabat
-import modules.mangatown as mangatown
+import drivers.mangabat as mangabat
+import drivers.mangatown as mangatown
 
 
-sources = {
+DRIVERS = {
   'MangaBat': {
-    'm': mangabat.MangaBat,
-    'description': 'MangaBat WTF'
+    'driver': mangabat.MangaBat,
+    'description': 'MangaBat: https://readmangabat.com'
   },
   'MangaTown': {
-    'm': mangatown.MangaTown,
-    'description': 'MangaTown WTF'
+    'driver': mangatown.MangaTown,
+    'description': 'MangaTown: https://m.mangatown.com'
   },
 
 }
 
-CHOICES = [k for k in sources.keys()]
+DEFAULT_DRIVER = mangabat.MangaBat
+
+CHOICES = [k for k in DRIVERS.keys()]
 
 
 COGS = [

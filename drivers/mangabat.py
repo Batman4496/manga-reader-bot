@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from modules.helpers import extract_data
+from drivers.helpers import extract_data
 
 
 REQUEST_URL = "https://readmangabat.com"

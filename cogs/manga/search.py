@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from constants import sources, CHOICES
+from constants import CHOICES
 from views.search_view import SearchView
 from classes.manga_manager import MangaManger
 
@@ -17,7 +17,7 @@ class Search(commands.Cog):
         search: discord.Option(str, description="Managa You want to search"),
         source: discord.Option(
           str, 
-          description="Sources to search on", 
+          description="Sources to search on.", 
           choices=CHOICES,
           required=False,
           default=CHOICES[0]          
