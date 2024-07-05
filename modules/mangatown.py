@@ -42,7 +42,6 @@ class MangaTown:
     
     return data
 
-
   def get_manga(self, url: str) -> dict:
     data = {}
     res = requests.get(url).text
@@ -104,7 +103,6 @@ class MangaTown:
 
     return data
     
-
   def get_hot_mangas(self) -> list[dict]:
     res = requests.get(f"{REQUEST_URL}/hot").text
     soup = BeautifulSoup(res, 'lxml')
@@ -124,11 +122,4 @@ class MangaTown:
 
 def main() -> None:
   m = MangaTown()
-  print(m.get_chapter_code("https://m.mangatown.com/manga/fairy_tail/v38/c545/"))
-  # print(m.get_manga('https://m.mangatown.com/manga/fairy_tail'))
-
-if __name__ == '__main__':
-  from helpers import extract_data, get_image
-  main()
-else:
-  from modules.helpers import extract_data, get_image
+  ...

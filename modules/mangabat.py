@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+from modules.helpers import extract_data
+
 
 REQUEST_URL = "https://readmangabat.com"
 
@@ -115,5 +117,3 @@ def main() -> None:
 if __name__ == '__main__':
   from helpers import extract_data, get_image
   main()
-else:
-  from modules.helpers import extract_data, get_image
