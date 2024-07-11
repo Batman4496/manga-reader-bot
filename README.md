@@ -5,14 +5,14 @@ A simple bot written in python.
 # Commands
 
 
-/hot
+1. /hot: Get hot mangas from available sources.
 
 ![Hot Mangas](./assets/hot.png)
 
-/read
+2. /read: Read a manga from source.
 ![Read Mangas](./assets/read.png)
 
-/search
+3. /search: Search manga from the sources
 ![Search Mangas](./assets/search.png)
 
 
