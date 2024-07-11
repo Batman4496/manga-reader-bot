@@ -2,6 +2,20 @@
 
 A simple bot written in python.
 
+# Commands
+
+
+/hot
+
+![Hot Mangas](./assets/hot.png)
+
+/read
+![Read Mangas](./assets/read.png)
+
+/search
+![Search Mangas](./assets/search.png)
+
+
 # Sources
 
 Currently supports the following sources:
